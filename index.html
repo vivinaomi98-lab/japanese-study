@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>日本語 Study</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <header>
+            <h1>日本語 <span>Study</span></h1>
+            <nav class="tabs">
+                <button class="tab active" data-tab="tabela">Tabela</button>
+                <button class="tab" data-tab="exercicio">Exercício</button>
+            </nav>
+        </header>
+
+        <main>
+            <section id="tab-tabela" class="tab-content active">
+                <table id="hiragana-table"></table>
+            </section>
+
+            <section id="tab-exercicio" class="tab-content">
+                <div id="config-panel">
+                    <div class="config-section">
+                        <h3>Famílias</h3>
+                        <div class="family-options" id="family-options"></div>
+                        <button id="select-all-btn" class="link-btn">Selecionar todas</button>
+                    </div>
+                    <div class="config-section">
+                        <h3>Modo</h3>
+                        <div class="mode-options">
+                            <label class="mode-label">
+                                <input type="radio" name="mode" value="h2r">
+                                <span>Hiragana → Romaji</span>
+                            </label>
+                            <label class="mode-label">
+                                <input type="radio" name="mode" value="r2h">
+                                <span>Romaji → Hiragana</span>
+                            </label>
+                        </div>
+                    </div>
+                    <button id="start-btn" disabled>Começar</button>
+                </div>
+
+                <div id="exercise-panel" class="hidden">
+                    <button id="back-btn" class="link-btn">← Voltar</button>
+                    <div class="exercise-header">
+                        <span id="progress"></span>
+                        <span id="score"></span>
+                    </div>
+                    <div id="question-char"></div>
+                    <div id="typing-area" class="hidden">
+                        <input type="text" id="romaji-input" placeholder="Romaji..." autocomplete="off" spellcheck="false">
+                        <button id="check-btn">Verificar</button>
+                    </div>
+                    <div id="options-area" class="hidden"></div>
+                    <div id="feedback"></div>
+                    <button id="reveal-btn" class="hidden">Mostrar resposta</button>
+                </div>
+
+                <div id="results-panel" class="hidden">
+                    <div class="results-card">
+                        <h2>Resultado</h2>
+                        <div class="results-stats">
+                            <div class="stat">
+                                <span class="stat-value" id="result-score"></span>
+                                <span class="stat-label">Acertos</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value" id="result-total"></span>
+                                <span class="stat-label">Total</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value" id="result-percent"></span>
+                                <span class="stat-label">Aproveitamento</span>
+                            </div>
+                        </div>
+                        <p id="result-message"></p>
+                        <div class="results-actions">
+                            <button id="more-btn" class="btn-primary">Mais 20</button>
+                            <button id="restart-btn" class="btn-secondary">Recomeçar</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
