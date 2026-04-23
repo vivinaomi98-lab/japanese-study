@@ -1,126 +1,181 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>日本語 Study</title>
+
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
+
     <div class="app">
+
         <header>
+
             <h1>日本語 <span>Study</span></h1>
+
             <nav class="tabs">
+
                 <button class="tab active" data-tab="tabela">Tabela</button>
+
                 <button class="tab" data-tab="exercicio">Exercício</button>
+
             </nav>
+
         </header>
 
+
+
         <main>
+
             <section id="tab-tabela" class="tab-content active">
-                <div class="dual-tables-container">
-                    <div class="table-wrapper">
-                        <h2>Hiragana</h2>
-                        <table id="hiragana-table" class="kana-table"></table>
-                    </div>
-                    <br>
-                    <div class="table-wrapper">
-                        <h2>Katakana</h2>
-                        <table id="katakana-table" class="kana-table"></table>
-                    </div>
-                </div>
+
+                <table id="hiragana-table"></table>
+
             </section>
 
+
+
             <section id="tab-exercicio" class="tab-content">
+
                 <div id="config-panel">
-                    <div class="config-section">
-                        <h3>Alfabeto</h3>
-                        <div class="mode-options">
-                            <label class="mode-label">
-                                <input type="radio" name="script-type" value="hiragana" checked>
-                                <span>Hiragana</span>
-                            </label>
-                            <label class="mode-label">
-                                <input type="radio" name="script-type" value="katakana">
-                                <span>Katakana</span>
-                            </label>
-                            <label class="mode-label">
-                                <input type="radio" name="script-type" value="both">
-                                <span>Ambos</span>
-                            </label>
-                        </div>
-                    </div>
 
                     <div class="config-section">
+
                         <h3>Famílias</h3>
+
                         <div class="family-options" id="family-options"></div>
+
                         <button id="select-all-btn" class="link-btn">Selecionar todas</button>
+
                     </div>
 
                     <div class="config-section">
+
                         <h3>Modo</h3>
+
                         <div class="mode-options">
+
                             <label class="mode-label">
+
                                 <input type="radio" name="mode" value="h2r">
-                                <span>Escrita (→ Romaji)</span>
+
+                                <span>Hiragana → Romaji</span>
+
                             </label>
+
                             <label class="mode-label">
+
                                 <input type="radio" name="mode" value="r2h">
-                                <span>Escolha (→ Kana)</span>
+
+                                <span>Romaji → Hiragana</span>
+
                             </label>
+
                         </div>
+
                     </div>
-                    
-                    <button id="start-btn" disabled>Começar Treino</button>
+
+                    <button id="start-btn" disabled>Começar</button>
+
                 </div>
 
+
+
                 <div id="exercise-panel" class="hidden">
-                    <button id="back-btn" class="link-btn">← Voltar para Configurações</button>
+
+                    <button id="back-btn" class="link-btn">← Voltar</button>
+
                     <div class="exercise-header">
-                        <span id="progress">Questão 0 / 0</span>
-                        <span id="score">Acertos: 0 / 0</span>
+
+                        <span id="progress"></span>
+
+                        <span id="score"></span>
+
                     </div>
 
                     <div id="question-char"></div>
 
                     <div id="typing-area" class="hidden">
-                        <input type="text" id="romaji-input" placeholder="Digite em romaji..." autocomplete="off" spellcheck="false">
+
+                        <input type="text" id="romaji-input" placeholder="Romaji..." autocomplete="off" spellcheck="false">
+
                         <button id="check-btn">Verificar</button>
+
                     </div>
 
                     <div id="options-area" class="hidden"></div>
 
                     <div id="feedback"></div>
+
                     <button id="reveal-btn" class="hidden">Mostrar resposta</button>
+
                 </div>
 
+
+
                 <div id="results-panel" class="hidden">
+
                     <div class="results-card">
-                        <h2>Resultado do Treino</h2>
+
+                        <h2>Resultado</h2>
+
                         <div class="results-stats">
+
                             <div class="stat">
-                                <span class="stat-value" id="result-score">0</span>
+
+                                <span class="stat-value" id="result-score"></span>
+
                                 <span class="stat-label">Acertos</span>
+
                             </div>
+
                             <div class="stat">
-                                <span class="stat-value" id="result-total">0</span>
+
+                                <span class="stat-value" id="result-total"></span>
+
                                 <span class="stat-label">Total</span>
+
                             </div>
+
                             <div class="stat">
-                                <span class="stat-value" id="result-percent">0%</span>
+
+                                <span class="stat-value" id="result-percent"></span>
+
                                 <span class="stat-label">Aproveitamento</span>
+
                             </div>
+
                         </div>
+
                         <p id="result-message"></p>
+
                         <div class="results-actions">
-                            <button id="more-btn" class="btn-primary">Treinar Novamente</button>
-                            <button id="restart-btn" class="btn-secondary">Configurações</button>
+
+                            <button id="more-btn" class="btn-primary">Mais 20</button>
+
+                            <button id="restart-btn" class="btn-secondary">Recomeçar</button>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </section>
+
         </main>
+
     </div>
-    <script src="app.js"></script>
+
+    <script src="script/app.js"></script>
+
 </body>
+
 </html>
