@@ -1,126 +1,127 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>日本語 Study</title>
+    <title>English Mastery -> Japanese Pivot</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="app">
-        <header>
-            <h1>日本語 <span>Study</span></h1>
-            <nav class="tabs">
-                <button class="tab active" data-tab="tabela">Tabela</button>
-                <button class="tab" data-tab="exercicio">Exercício</button>
-            </nav>
-        </header>
 
-        <main>
-            <section id="tab-tabela" class="tab-content active">
-                <div class="dual-tables-container">
-                    <div class="table-wrapper">
-                        <h2>Hiragana</h2>
-                        <table id="hiragana-table" class="kana-table"></table>
-                    </div>
-                    <br>
-                    <div class="table-wrapper">
-                        <h2>Katakana</h2>
-                        <table id="katakana-table" class="kana-table"></table>
-                    </div>
-                </div>
-            </section>
+    <!-- Header & Navegação por Abas (Tabs) -->
+    <header class="app-header">
+        <div class="logo">Nihongo Mastery</div>
+        <nav class="tab-navigation">
+            <button class="tab-btn" data-target="exercise-screen" style="visibility: hidden;">Exercícios</button>
+            <button class="tab-btn active" data-target="setup-screen">Configuração</button>
+            <button class="tab-btn" data-target="vocab-screen">Vocabulário</button>
+        </nav>
+    </header>
 
-            <section id="tab-exercicio" class="tab-content">
-                <div id="config-panel">
-                    <div class="config-section">
-                        <h3>Alfabeto</h3>
-                        <div class="mode-options">
-                            <label class="mode-label">
-                                <input type="radio" name="script-type" value="hiragana" checked>
-                                <span>Hiragana</span>
-                            </label>
-                            <label class="mode-label">
-                                <input type="radio" name="script-type" value="katakana">
-                                <span>Katakana</span>
-                            </label>
-                            <label class="mode-label">
-                                <input type="radio" name="script-type" value="both">
-                                <span>Ambos</span>
-                            </label>
-                        </div>
-                    </div>
+    <main class="app-container">
 
-                    <div class="config-section">
-                        <h3>Famílias</h3>
-                        <div class="family-options" id="family-options"></div>
-                        <button id="select-all-btn" class="link-btn">Selecionar todas</button>
-                    </div>
+        <!-- 1. ABA: CONFIGURAÇÃO (Setup Screen) -->
+        <section id="setup-screen" class="tab-content active">
+            <div class="setup-card">
+                <h2>O que você quer estudar hoje?</h2>
+                <p class="subtitle">Selecione o sistema e as categorias para carregar o conteúdo.</p>
 
-                    <div class="config-section">
-                        <h3>Modo</h3>
-                        <div class="mode-options">
-                            <label class="mode-label">
-                                <input type="radio" name="mode" value="h2r">
-                                <span>Escrita (→ Romaji)</span>
-                            </label>
-                            <label class="mode-label">
-                                <input type="radio" name="mode" value="r2h">
-                                <span>Escolha (→ Kana)</span>
-                            </label>
-                        </div>
-                    </div>
-                    
-                    <button id="start-btn" disabled>Começar Treino</button>
-                </div>
+                <hr>
 
-                <div id="exercise-panel" class="hidden">
-                    <button id="back-btn" class="link-btn">← Voltar para Configurações</button>
-                    <div class="exercise-header">
-                        <span id="progress">Questão 0 / 0</span>
-                        <span id="score">Acertos: 0 / 0</span>
-                    </div>
-
-                    <div id="question-char"></div>
-
-                    <div id="typing-area" class="hidden">
-                        <input type="text" id="romaji-input" placeholder="Digite em romaji..." autocomplete="off" spellcheck="false">
-                        <button id="check-btn">Verificar</button>
-                    </div>
-
-                    <div id="options-area" class="hidden"></div>
-
-                    <div id="feedback"></div>
-                    <button id="reveal-btn" class="hidden">Mostrar resposta</button>
-                </div>
-
-                <div id="results-panel" class="hidden">
-                    <div class="results-card">
-                        <h2>Resultado do Treino</h2>
-                        <div class="results-stats">
-                            <div class="stat">
-                                <span class="stat-value" id="result-score">0</span>
-                                <span class="stat-label">Acertos</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-value" id="result-total">0</span>
-                                <span class="stat-label">Total</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-value" id="result-percent">0%</span>
-                                <span class="stat-label">Aproveitamento</span>
-                            </div>
-                        </div>
-                        <p id="result-message"></p>
-                        <div class="results-actions">
-                            <button id="more-btn" class="btn-primary">Treinar Novamente</button>
-                            <button id="restart-btn" class="btn-secondary">Configurações</button>
-                        </div>
+                <!-- Seleção do Arquivo Fonte (Módulo) -->
+                <div class="setup-group">
+                    <h3>1. Escolha o Sistema</h3>
+                    <div class="radio-options">
+                        <label class="option-label">
+                            <input type="radio" name="source-type" value="hiragana" checked>
+                            <span>Hiragana (Alfabeto)</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="source-type" value="katakana">
+                            <span>Katakana (Alfabeto)</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="source-type" value="verbs">
+                            <span>Verbos</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="source-type" value="colors">
+                            <span>Cores</span>
+                        </label>
                     </div>
                 </div>
-            </section>
-        </main>
-    </div>
-    <script src="app.js"></script>
+
+                <!-- Container Dinâmico para Sub-separações (Vogais ou Categorias Gramaticais) -->
+                <div class="setup-group">
+                    <h3>2. Filtros e Categorias</h3>
+                    <div id="category-checkboxes-container" class="checkbox-grid">
+                        <!-- Gerado dinamicamente via renderCategoryCheckboxes() -->
+                        <p class="placeholder-text">Selecione um sistema acima para carregar as categorias disponíveis.
+                        </p>
+                    </div>
+                </div>
+
+                <button id="btn-start-study" class="btn-primary">Confirmar e Carregar</button>
+            </div>
+        </section>
+
+        <!-- 2. ABA: VOCABULÁRIO (Vocab Screen) -->
+        <section id="vocab-screen" class="tab-content">
+            <div class="screen-header">
+                <h2>Painel de Estudos</h2>
+                <p>Consulte o alfabeto completo e o vocabulário carregado na memória.</p>
+            </div>
+
+            <div id="alphabet-matrix-container" class="matrix-section">
+            </div>
+
+            <hr class="section-divider">
+
+            <div id="vocab-grid-2x2" class="grid-2x2">
+            </div>
+        </section>
+
+        <!-- 3. ABA: EXERCÍCIOS (Exercise Screen) -->
+        <section id="exercise-screen" class="tab-content">
+            <div class="exercise-layout">
+
+                <!-- Interface de Treino por Flashcard -->
+                <div class="flashcard-container">
+                    <div class="card-progress">
+                        <span id="current-card-index">0</span>/<span id="total-cards-count">0</span>
+                    </div>
+
+                    <div class="flashcard">
+                        <!-- Exibe o caractere ou palavra contida na propriedade 'jp' -->
+                        <h1 id="display-character">あ</h1>
+                        <p id="display-hint" class="hint-text"></p>
+                    </div>
+
+                    <!-- Formulário de Resposta com feedback visual (.success / .error) -->
+                    <div id="input-wrapper" class="input-wrapper">
+                        <input type="text" id="user-answer" autocomplete="off"
+                            placeholder="Digite o Romaji correspondente..." autofocus>
+                        <button id="btn-submit-answer" class="btn-action">Verificar</button>
+                    </div>
+
+                    <div id="feedback-message" class="feedback-message"></div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Scripts do Sistema -->
+    <script src="registry.js"></script>
+
+    <script src="alphabet.js"></script>
+    <script src="verbs.js"></script>
+    <script src="colors.js"></script>
+    <!-- Carregamos o script principal que gerenciará as abas, fetches e lógica de estados -->
+    <script src="app.js" defer></script>
 </body>
+
 </html>
