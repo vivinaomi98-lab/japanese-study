@@ -1,0 +1,103 @@
+
+/* ==========================================================================
+   5. ABA DE EXERCÍCIOS (Flashcards & Feedback)
+   ========================================================================== */
+.exercise-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+.flashcard-container {
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.card-progress {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.flashcard {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 4rem 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+#display-character {
+    font-size: 4.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.hint-text {
+    font-size: 1rem;
+    color: var(--text-muted);
+    min-height: 1.5rem;
+}
+
+/* Caixa wrapper do formulário de escrita */
+.input-wrapper {
+    display: flex;
+    gap: 0.5rem;
+    background-color: var(--bg-card);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 0.25rem;
+    transition: var(--transition);
+}
+
+.input-wrapper:focus-within {
+    border-color: var(--accent-color);
+}
+
+#user-answer {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0.75rem 1rem;
+    font-size: 1.1rem;
+    background: transparent;
+}
+
+.btn-action {
+    background-color: var(--text-main);
+    color: white;
+    border: none;
+    padding: 0 1.5rem;
+    font-weight: 600;
+    border-radius: calc(var(--radius) - 2px);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-action:hover {
+    background-color: #000000;
+}
+
+.flashcard-kana-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.2;
+}
+
+.furigana-reading {
+    font-size: 1.5rem; /* Menor e sutil */
+    color: #666;       /* Tom cinza para diferenciar do caractere principal */
+    margin-bottom: 0.2rem;
+    font-weight: normal;
+}
+
+.main-kanji {
+    font-size: 4rem;   /* Tamanho de destaque do flashcard */
+    font-weight: bold;
+}

@@ -1,0 +1,96 @@
+.screen-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.screen-header p {
+    color: var(--text-muted);
+}
+
+/* 4.1 MATRIZ TRADICIONAL (Gojūon Grid do Alfabeto) */
+.matrix-section {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    overflow-x: auto; /* Scroll horizontal caso a tela aperte */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.01);
+}
+
+.matrix-title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+    text-transform: capitalize;
+}
+
+.japanese-matrix {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    table-layout: fixed;
+    min-width: 650px; /* Garante estrutura firme em telas menores */
+}
+
+/* Ajustado para afetar APENAS a tabela do alfabeto */
+.japanese-matrix th, 
+.japanese-matrix td {
+    padding: 0.4rem;
+    border: 1px solid #e9ecef;
+    height: 75px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.japanese-matrix th {
+    background-color: #f8f9fa;
+    color: #4a90e2;
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+.matrix-vowel {
+    background-color: #f8f9fa;
+    color: #4a90e2;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Estilo do Caractere Japonês dentro da célula da matriz */
+.matrix-cell {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--text-main);
+    line-height: 1.2;
+}
+
+.matrix-cell span {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.matrix-empty {
+    background-color: #fafafa;
+}
+
+/* Estilo do Caractere Japonês dentro da célula da matriz */
+.matrix-cell {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--text-main);
+    line-height: 1.2;
+}
+
+.matrix-cell span {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.matrix-empty {
+    background-color: #fafafa;
+}

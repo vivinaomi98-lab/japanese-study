@@ -4,8 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Mastery -> Japanese Pivot</title>
-    <link rel="stylesheet" href="style.css">
+    <title>	いらっしゃいませ </title>
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/nav.css">
+    <link rel="stylesheet" href="styles/configuration.css">
+    <link rel="stylesheet" href="styles/vocabularyAlphabet.css">
+    <link rel="stylesheet" href="styles/vocabulary.css">
+    <link rel="stylesheet" href="styles/exercise.css">
+    <link rel="stylesheet" href="styles/exerciseFeedback.css">
 </head>
 
 <body>
@@ -50,6 +56,22 @@
                             <input type="radio" name="source-type" value="colors">
                             <span>Cores</span>
                         </label>
+                        <label class="option-label">
+                            <input type="radio" name="source-type" value="pronouns">
+                            <span>Pronomes</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="source-type" value="adjectives">
+                            <span>Adjetivos</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="source-type" value="greetings">
+                            <span>Saudacoes</span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="source-type" value="nouns">
+                            <span>Substantivos</span>
+                        </label>
                     </div>
                 </div>
 
@@ -69,11 +91,6 @@
 
         <!-- 2. ABA: VOCABULÁRIO (Vocab Screen) -->
         <section id="vocab-screen" class="tab-content">
-            <div class="screen-header">
-                <h2>Painel de Estudos</h2>
-                <p>Consulte o alfabeto completo e o vocabulário carregado na memória.</p>
-            </div>
-
             <div id="alphabet-matrix-container" class="matrix-section">
             </div>
 
@@ -115,11 +132,23 @@
     </main>
 
     <!-- Scripts do Sistema -->
-    <script src="registry.js"></script>
+    <script src="scripts/state.js"></script>
+    <script src="scripts/navbar.js"></script>
+    <script src="scripts/registry.js"></script>
+    <script src="scripts/configuration.js"></script>
+    <script src="scripts/alphabetMatrix.js"></script>
+    <script src="scripts/loadVocabulary.js"></script>
+    <script src="scripts/exercise.js"></script>
 
-    <script src="alphabet.js"></script>
-    <script src="verbs.js"></script>
-    <script src="colors.js"></script>
+    <!-- Vocabulary -->
+    <script src="vocabulary/alphabet.js"></script>
+    <script src="vocabulary/verbs.js"></script>
+    <script src="vocabulary/colors.js"></script>
+    <script src="vocabulary/pronouns.js"></script>
+    <script src="vocabulary/adjetives.js"></script>
+    <script src="vocabulary/greetings.js"></script>
+    <script src="vocabulary/nouns.js"></script>
+
     <!-- Carregamos o script principal que gerenciará as abas, fetches e lógica de estados -->
     <script src="app.js" defer></script>
 </body>

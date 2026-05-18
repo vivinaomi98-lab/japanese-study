@@ -1,0 +1,45 @@
+
+/* ==========================================================================
+   6. CLASSES DE ESTADO (Mecânica de Feedback Visual)
+   ========================================================================== */
+/* Sucesso (Fundo verde suave e auto-bloqueio) */
+.input-wrapper.success {
+    border-color: var(--color-success);
+    background-color: var(--bg-success);
+}
+.input-wrapper.success #user-answer {
+    color: #1b5e20;
+}
+.input-wrapper.success .btn-action {
+    background-color: var(--color-success);
+}
+
+/* Erro (Fundo vermelho suave + trigger de animação) */
+.input-wrapper.error {
+    border-color: var(--color-error);
+    background-color: var(--bg-error);
+    animation: shake 0.4s ease-in-out;
+}
+.input-wrapper.error #user-answer {
+    color: #78281f;
+}
+.input-wrapper.error .btn-action {
+    background-color: var(--color-error);
+}
+
+/* Textos de suporte abaixo do input */
+.feedback-message {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    min-height: 1.5rem;
+}
+.feedback-message.success-text { color: var(--color-success); }
+.feedback-message.error-text { color: var(--color-error); }
+
+/* Animação Física de Erro (Shake Box) */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    75% { transform: translateX(6px); }
+}

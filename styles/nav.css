@@ -1,0 +1,52 @@
+.app-header {
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    letter-spacing: -0.5px;
+}
+
+.tab-navigation {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+.tab-btn:hover {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+}
+
+.tab-btn.active {
+    background-color: var(--accent-color);
+    color: #ffffff;
+}
+
+/* Controle de Visibilidade das Abas SPA */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}

@@ -1,6 +1,6 @@
 const ALPHABET_DB = {
   "hiragana": {
-    "vowel_a": [
+    "a": [
       { "jp": "あ", "ro": ["a"] },
       { "jp": "か", "ro": ["ka"] },
       { "jp": "が", "ro": ["ga"] },
@@ -18,7 +18,7 @@ const ALPHABET_DB = {
       { "jp": "わ", "ro": ["wa"] },
       { "jp": "ん", "ro": ["n"] }
     ],
-    "vowel_i": [
+    "i": [
       { "jp": "い", "ro": ["i"] },
       { "jp": "き", "ro": ["ki"] },
       { "jp": "ぎ", "ro": ["gi"] },
@@ -33,7 +33,7 @@ const ALPHABET_DB = {
       { "jp": "み", "ro": ["mi"] },
       { "jp": "り", "ro": ["ri"] }
     ],
-    "vowel_u": [
+    "u": [
       { "jp": "う", "ro": ["u"] },
       { "jp": "く", "ro": ["ku"] },
       { "jp": "ぐ", "ro": ["gu"] },
@@ -49,14 +49,14 @@ const ALPHABET_DB = {
       { "jp": "ゆ", "ro": ["yu"] },
       { "jp": "る", "ro": ["ru"] }
     ],
-    "vowel_e": [
+    "e": [
       { "jp": "え", "ro": ["e"] },
       { "jp": "け", "ro": ["ke"] },
       { "jp": "げ", "ro": ["ge"] },
       { "jp": "せ", "ro": ["se"] },
       { "jp": "ぜ", "ro": ["ze"] },
       { "jp": "て", "ro": ["te"] },
-      { "jp": "de", "ro": ["de"] },
+      { "jp": "で", "ro": ["de"] },
       { "jp": "ね", "ro": ["ne"] },
       { "jp": "へ", "ro": ["he"] },
       { "jp": "べ", "ro": ["be"] },
@@ -64,7 +64,7 @@ const ALPHABET_DB = {
       { "jp": "め", "ro": ["me"] },
       { "jp": "れ", "ro": ["re"] }
     ],
-    "vowel_o": [
+    "o": [
       { "jp": "お", "ro": ["o"] },
       { "jp": "こ", "ro": ["ko"] },
       { "jp": "ご", "ro": ["go"] },
@@ -83,7 +83,7 @@ const ALPHABET_DB = {
     ]
   },
   "katakana": {
-    "vowel_a": [
+    "a": [
       { "jp": "ア", "ro": ["a"] },
       { "jp": "カ", "ro": ["ka"] },
       { "jp": "ガ", "ro": ["ga"] },
@@ -101,7 +101,7 @@ const ALPHABET_DB = {
       { "jp": "ワ", "ro": ["wa"] },
       { "jp": "ン", "ro": ["n"] }
     ],
-    "vowel_i": [
+    "i": [
       { "jp": "イ", "ro": ["i"] },
       { "jp": "キ", "ro": ["ki"] },
       { "jp": "ギ", "ro": ["gi"] },
@@ -116,7 +116,7 @@ const ALPHABET_DB = {
       { "jp": "ミ", "ro": ["mi"] },
       { "jp": "リ", "ro": ["ri"] }
     ],
-    "vowel_u": [
+    "u": [
       { "jp": "ウ", "ro": ["u"] },
       { "jp": "ク", "ro": ["ku"] },
       { "jp": "グ", "ro": ["gu"] },
@@ -132,7 +132,7 @@ const ALPHABET_DB = {
       { "jp": "ユ", "ro": ["yu"] },
       { "jp": "ル", "ro": ["ru"] }
     ],
-    "vowel_e": [
+    "e": [
       { "jp": "エ", "ro": ["e"] },
       { "jp": "ケ", "ro": ["ke"] },
       { "jp": "ゲ", "ro": ["ge"] },
@@ -147,7 +147,7 @@ const ALPHABET_DB = {
       { "jp": "メ", "ro": ["me"] },
       { "jp": "レ", "ro": ["re"] }
     ],
-    "vowel_o": [
+    "o": [
       { "jp": "オ", "ro": ["o"] },
       { "jp": "コ", "ro": ["ko"] },
       { "jp": "ゴ", "ro": ["go"] },

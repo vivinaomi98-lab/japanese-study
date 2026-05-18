@@ -1,0 +1,138 @@
+.grid-2x2 {
+    display: grid;
+    /* Altera de colunas fixas para colunas flexíveis com tamanho mínimo inteligente */
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.vocab-category-card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Faz o card preencher toda a área da célula do Grid */
+    box-sizing: border-box;
+
+    /* SOLUÇÃO: Define uma altura máxima confortável e ativa o scroll vertical */
+    max-height: 600px; 
+    overflow-y: auto;   /* Permite rolar para baixo para ver todas as palavras */
+}
+
+.vocab-category-card h3 {
+    padding: 1.2rem 1.5rem;
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent-color); /* Restaura o azul claro padrão do seu app (--4a90e2) */
+    text-transform: capitalize;
+    margin: 0;
+}
+
+/* Área interna de rolagem para as tabelas dentro do card */
+.table-wrapper {
+    width: 100%;
+    /* Ativa o scroll horizontal APENAS se a tela for menor que 450px (ex: celulares) */
+    overflow-x: auto; 
+    margin-top: 10px;
+}
+
+/* Correção de Reset e Espaçamentos da tabela de Vocabulário */
+.vocab-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Força o navegador a respeitar as larguras e quebrar o texto verticalmente */
+}
+
+/* Zera qualquer herança de altura ou centralização vinda do alfabeto */
+.vocab-table th, 
+.vocab-table td {
+    height: auto !important;
+    text-align: left !important; /* Alinhamento para a esquerda garante melhor leitura e quebra de linha */
+    vertical-align: middle;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    
+    /* Ativa a quebra de palavras e frases longas verticalmente */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+.vocab-table th {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    color: #7f8c8d;               /* Tom cinza sutil dos títulos */
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 1rem 0.5rem;
+    border-bottom: 1px solid #edf2f7 !important;
+    z-index: 10;
+}
+
+
+.vocab-table td {
+    padding: 1.2rem 0.5rem;      /* Linhas confortáveis e altas da sua imagem */
+    border-bottom: 1px solid #f1f5f9 !important;
+    font-size: 1rem;
+    color: #4a5568;
+}
+
+/* Coluna especial com fonte maior para destacar Kanji/Kana */
+.vocab-table td.jp-column {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--text-main);
+    line-height: 1.4;
+    
+    /* SOLUÇÃO: Força a quebra vertical em caracteres japoneses/línguas asiáticas */
+    word-break: break-all; 
+    white-space: normal;
+}
+
+/* Estilo para reduzir e diferenciar o Kana dentro da tabela */
+.kana-small {
+    font-size: 0.85rem;    /* Faz o kana ser 85% do tamanho do texto normal */
+    color: #666;           /* Deixa o kana num cinza mais suave */
+    margin-left: 5px;      /* Dá um respiro entre o Kanji e o Kana */
+    font-family: sans-serif;
+    vertical-align: middle;
+    font-weight: normal;
+    display: inline-block; /* Faz o bloco cair junto se a frase em japonês for muito longa */
+}
+
+/* Barra de Rolagem lateral fina e cinza para o wrapper da tabela */
+.table-wrapper::-webkit-scrollbar {
+    height: 6px; /* Para barras horizontais */
+    width: 6px;
+}
+.table-wrapper::-webkit-scrollbar-track {
+    background: transparent;
+}
+.table-wrapper::-webkit-scrollbar-thumb {
+    background: #a0aec0;
+    border-radius: 10px;
+}
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #718096;
+}
+
+/* Responsividade do Grid */
+@media (max-width: 900px) {
+    .grid-2x2 {
+        grid-template-columns: 1fr;
+    }
+    .vocab-category-card {
+        /* Mudado de 350px fixo para max-height para respeitar o conteúdo */
+        max-height: 500px; 
+    }
+    .vocabulary-tables-container {
+        flex-direction: column;
+    }
+}

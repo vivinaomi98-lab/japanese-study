@@ -1,0 +1,55 @@
+:root {
+    --bg-primary: #f8f9fa;
+    --bg-card: #ffffff;
+    --text-main: #212529;
+    --text-muted: #6c757d;
+    --accent-color: #4a90e2;
+    --accent-hover: #357abd;
+    
+    /* Cores de Estado para Feedback Visual */
+    --color-success: #2ecc71;
+    --color-error: #e74c3c;
+    --bg-success: #e8f8f0;
+    --bg-error: #fdedec;
+    
+    --border-color: #e2e8f0;
+    --radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.app-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: var(--border-color);
+    margin: 1.5rem 0;
+}
+
+.section-divider {
+    margin: 2.5rem 0;
+    border-style: dashed;
+    background: transparent;
+    border-top: 2px dashed var(--border-color);
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
